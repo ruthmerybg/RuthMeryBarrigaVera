@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruth Mery - Demon Slayer Style</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <title>Ruth Mery - Estilo Cazadora</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Kaushan+Script&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #e63946;
-            --secondary: #f1faee;
-            --accent: #a8dadc;
-            --dark: #1d3557;
+            --primary: #e63946; /* Rojo Nichirin */
+            --secondary: #f1faee; /* Blanco nieve */
+            --accent: #a8dadc; /* Azul respiración agua */
+            --dark: #1d3557; /* Azul noche */
             --light: #f1faee;
         }
         
@@ -19,80 +19,89 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: var(--secondary);
             color: #333;
-            background-image: url('https://i.imgur.com/JQJQZQJ.png');
+            background-image: url('https://i.imgur.com/9E6aWUb.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
+            min-height: 100vh;
+        }
+        
+        /* Capa oscura semitransparente para mejor legibilidad */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(29, 53, 87, 0.85);
+            z-index: -1;
         }
         
         header {
-            background: linear-gradient(135deg, var(--dark), var(--primary));
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(230, 57, 70, 0.9));
             color: var(--light);
             padding: 30px 0;
             text-align: center;
             margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             position: relative;
             overflow: hidden;
+            border-bottom: 3px solid var(--primary);
         }
         
-        header::before {
-            content: "";
+        header::after {
+            content: "❖";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #f72585, #7209b7, #3a0ca3, #4361ee, #4cc9f0);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(255,255,255,0.7);
         }
         
         h1 {
             margin: 0;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
+            font-size: 2.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 3px;
+            font-family: 'Kaushan Script', cursive;
         }
         
         .container {
             width: 85%;
-            margin: auto;
+            max-width: 1200px;
+            margin: 30px auto;
             overflow: hidden;
         }
         
         section {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 25px;
+            background: rgba(255, 255, 255, 0.93);
+            padding: 30px;
             margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--primary);
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+            border-left: 6px solid var(--primary);
+            backdrop-filter: blur(2px);
         }
         
         section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
         }
         
         h2 {
             color: var(--primary);
             border-bottom: 2px solid var(--accent);
-            padding-bottom: 8px;
-            font-size: 1.8rem;
-            position: relative;
+            padding-bottom: 10px;
+            font-size: 2rem;
             display: inline-block;
-        }
-        
-        h2::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 50%;
-            height: 3px;
-            background: var(--dark);
+            margin-top: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-family: 'Kaushan Script', cursive;
         }
         
         ul {
@@ -101,17 +110,20 @@
         }
         
         li {
-            padding: 10px 0;
-            border-bottom: 1px dashed #ddd;
+            padding: 12px 0;
+            border-bottom: 1px dashed #ccc;
             position: relative;
-            padding-left: 25px;
+            padding-left: 35px;
+            font-size: 1.1rem;
         }
         
         li::before {
-            content: "❖";
+            content: "⚔";
             color: var(--primary);
             position: absolute;
             left: 0;
+            top: 10px;
+            font-size: 1.2rem;
         }
         
         a {
@@ -119,77 +131,115 @@
             text-decoration: none;
             transition: all 0.3s ease;
             font-weight: bold;
-            padding: 2px 5px;
-            border-radius: 3px;
+            padding: 3px 6px;
+            border-radius: 4px;
+            background: linear-gradient(to right, transparent 50%, rgba(168, 218, 220, 0.3) 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
         }
         
         a:hover {
             color: var(--primary);
-            background-color: rgba(168, 218, 220, 0.3);
-            text-decoration: none;
+            background-position: left bottom;
         }
         
         footer {
             text-align: center;
             padding: 25px;
-            background: linear-gradient(135deg, var(--dark), var(--primary));
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(230, 57, 70, 0.9));
             color: var(--light);
-            margin-top: 40px;
-            font-size: 0.9rem;
+            margin-top: 50px;
+            font-size: 1rem;
+            border-top: 3px solid var(--accent);
         }
         
-        /* Estilos para la imagen centrada */
+        /* Estilos para la imagen */
         .imagen-centrada {
             display: block;
-            margin: 25px auto;
-            max-width: 350px;
+            margin: 30px auto;
+            width: 100%;
+            max-width: 400px;
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            border: 5px solid white;
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 6px solid white;
+            transition: all 0.5s ease;
         }
         
         .imagen-centrada:hover {
-            transform: scale(1.03);
+            transform: scale(1.02) rotate(1deg);
+            box-shadow: 0 15px 30px rgba(230, 57, 70, 0.4);
         }
         
         .centrar-texto {
             text-align: center;
-            margin: 15px 0;
-        }
-        
-        /* Efectos especiales */
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            margin: 20px 0;
         }
         
         /* Botones estilo Demon Slayer */
         .btn-demon {
             display: inline-block;
-            background: var(--primary);
+            background: linear-gradient(to right, var(--primary), #c1121f);
             color: white;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 30px;
             text-transform: uppercase;
             font-weight: bold;
-            letter-spacing: 1px;
-            margin: 10px 5px;
+            letter-spacing: 1.5px;
+            margin: 15px 5px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 0 var(--dark);
+            box-shadow: 0 5px 0 var(--dark);
             border: none;
             cursor: pointer;
+            font-family: 'Noto Sans JP', sans-serif;
+            position: relative;
+            overflow: hidden;
         }
         
         .btn-demon:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 0 var(--dark);
-            color: white;
+            box-shadow: 0 8px 0 var(--dark);
+        }
+        
+        .btn-demon:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 var(--dark);
+        }
+        
+        .btn-demon::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255,255,255,0.3) 0%,
+                rgba(255,255,255,0) 60%
+            );
+            transform: rotate(30deg);
+        }
+        
+        /* Efecto de flotación */
+        .floating {
+            animation: floating 4s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Efecto de destello para títulos */
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px rgba(230, 57, 70, 0.7); }
+            50% { text-shadow: 0 0 15px rgba(230, 57, 70, 0.9); }
+            100% { text-shadow: 0 0 5px rgba(230, 57, 70, 0.7); }
+        }
+        
+        h1, h2 {
+            animation: glow 3s ease-in-out infinite;
         }
         
         /* Responsive */
@@ -201,6 +251,10 @@
             h1 {
                 font-size: 2rem;
             }
+            
+            section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -208,97 +262,119 @@
     <header class="floating">
         <div class="container">
             <h1>RUTH MERY BARRIGA VERA</h1>
-            <p>Estudiante de Contabilidad | Estilo Cazadora de Demonios</p>
+            <p>« Respiración de la Contabilidad - Primer Forma: Balance Perfecto »</p>
         </div>
     </header>
 
     <div class="container">
-        <!-- Sección de imagen centrada añadida -->
+        <!-- Sección de imagen -->
         <section id="foto-perfil">
             <div class="centrar-texto">
-                <h2>Mis Niños</h2>
+                <h2>Mis Compañeros de Misión</h2>
             </div>
-            <img src="Amigos.jpg" alt="Foto de Ruth Mery Barriga Vera" class="imagen-centrada floating">
+            <img src="Amigos.jpg" alt="Ruth Mery y sus compañeros" class="imagen-centrada">
             <div class="centrar-texto">
-                <p>Estudiante de Contabilidad en la Universidad Católica San Pablo</p>
-                <button class="btn-demon">Respiración de la Contabilidad</button>
+                <p>« Juntos en el Cuerpo de Cazadores de la Universidad Católica San Pablo »</p>
+                <button class="btn-demon">Ver Técnicas Combinadas</button>
             </div>
         </section>
 
         <section id="informacion-personal">
-            <h2>Información Personal</h2>
-            <p><strong>Nombres:</strong> RUTH MERY</p>
-            <p><strong>Apellidos:</strong> BARRIGA VERA</p>
-            <p><strong>Carrera:</strong> CONTABILIDAD</p>
-            <p><strong>Universidad/Institución:</strong> UNIVERSIDAD CATOLICA SAN PABLO</p>
-            <button class="btn-demon">Mostrar Nichirin</button>
+            <h2>Datos del Cazador</h2>
+            <ul>
+                <li><strong>Nombre:</strong> RUTH MERY BARRIGA VERA</li>
+                <li><strong>Rango:</strong> Estudiante de Contabilidad (Kinoe)</li>
+                <li><strong>Dojo:</strong> UNIVERSIDAD CATOLICA SAN PABLO</li>
+                <li><strong>Respiración:</strong> Estilo Contable</li>
+            </ul>
+            <button class="btn-demon">Mostrar Credenciales</button>
         </section>
 
         <section id="cursos-actuales">
-            <h2>Técnicas de Combate (Cursos Actuales)</h2>
+            <h2>Técnicas en Entrenamiento</h2>
             <ul>
-                <li>Contabilidad de Costos II 
-                    <p>Maestro del estilo: <a href="https://www.linkedin.com/in/julio-c%C3%A9sar-liz%C3%A1rraga-zegarra-01524289/">Julio César Lizarraga Zegarra</a></p>
+                <li><strong>Contabilidad de Costos II</strong>
+                    <p>Maestro: <a href="https://www.linkedin.com/in/julio-c%C3%A9sar-liz%C3%A1rraga-zegarra-01524289/">Julio César Lizarraga Zegarra</a></p>
                 </li>
-                <li>Normatividad Contable II
-                    <p>Maestra del estilo: <a href="https://www.linkedin.com/in/edgard-fredy-leiva-flores-a17b2aa0/">Edgard Fredy Leiva Flores</a></p>
+                <li><strong>Normatividad Contable II</strong>
+                    <p>Maestro: <a href="https://www.linkedin.com/in/edgard-fredy-leiva-flores-a17b2aa0/">Edgard Fredy Leiva Flores</a></p>
                 </li>
-                <li>Estadistica y Probabilidades
-                    <p>Maestro del estilo: <a href="https://www.linkedin.com/in/ricardo-enr%C3%ADquez-c%C3%A1ceres-88200325/">Ricardo Enríquez Cáceres</a></p>
+                <li><strong>Estadistica y Probabilidades</strong>
+                    <p>Maestro: <a href="https://www.linkedin.com/in/ricardo-enr%C3%ADquez-c%C3%A1ceres-88200325/">Ricardo Enríquez Cáceres</a></p>
                 </li>
-                <li>Macroeconomia
-                    <p>Maestra del estilo: <a href="https://www.linkedin.com/in/lieslie-gallegos-arias-investigador-renacyt-773713a5/">Lieslie Gallegos Arias</a></p>
+                <li><strong>Macroeconomia</strong>
+                    <p>Maestra: <a href="https://www.linkedin.com/in/lieslie-gallegos-arias-investigador-renacyt-773713a5/">Lieslie Gallegos Arias</a></p>
                 </li>
-                <li>Introduccion a Ciencia de la Computacion
-                    <p>Maestro del estilo: <a href="https://www.linkedin.com/in/renzo-medina-zeballos-77145a35/">Renzo Medina Zeballos</a></p>
+                <li><strong>Introduccion a Ciencia de la Computacion</strong>
+                    <p>Maestro: <a href="https://www.linkedin.com/in/renzo-medina-zeballos-77145a35/">Renzo Medina Zeballos</a></p>
                 </li>
-                <li>Contabilidad Tributaria I
-                    <p>Maestro del estilo: <a href="https://www.linkedin.com/in/helmut-monzon-86180b109/">Helmut Monzon</a></p>
-                </li>          
-                <li>Moral
-                    <p>Maestro del estilo: <a href="https://www.linkedin.com/in/andr%C3%A9s-jorge-%C3%A1lvarez-grupp-a6b158152/">Andrés Jorge Álvarez Grupp</a></p>
+                <li><strong>Contabilidad Tributaria I</strong>
+                    <p>Maestro: <a href="https://www.linkedin.com/in/helmut-monzon-86180b109/">Helmut Monzon</a></p>
+                </li>
+                <li><strong>Moral</strong>
+                    <p>Maestro: <a href="https://www.linkedin.com/in/andr%C3%A9s-jorge-%C3%A1lvarez-grupp-a6b158152/">Andrés Jorge Álvarez Grupp</a></p>
                 </li>
             </ul>
-            <button class="btn-demon">Aprender Técnicas Totales</button>
+            <button class="btn-demon">Aprender Nueva Forma</button>
         </section>
 
         <section id="enlaces-companeros">
-            <h2>Compañeros del Cuerpo de Cazadores</h2>
-            <ul>
-                <li><a href="#" class="btn-demon" style="display: inline-block; padding: 5px 15px;">Compañero 1</a></li>
-                <li><a href="#" class="btn-demon" style="display: inline-block; padding: 5px 15px;">Compañero 2</a></li>
-                <li><a href="#" class="btn-demon" style="display: inline-block; padding: 5px 15px;">Compañero 3</a></li>
-                <li><a href="#" class="btn-demon" style="display: inline-block; padding: 5px 15px;">Compañero 4</a></li>
-            </ul>
+            <h2>Compañeros del Cuerpo</h2>
+            <div class="centrar-texto">
+                <button class="btn-demon" style="margin: 10px">Cazador 1</button>
+                <button class="btn-demon" style="margin: 10px">Cazador 2</button>
+                <button class="btn-demon" style="margin: 10px">Cazador 3</button>
+                <button class="btn-demon" style="margin: 10px">Cazador 4</button>
+            </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2023 Ruth Mery Barriga Vera. Todos los derechos reservados. | Estilo Kimetsu no Yaiba</p>
+        <p>&copy; 2023 Ruth Mery Barriga Vera - Cazadora de Demonios Contables | 鬼滅の刃スタイル</p>
     </footer>
 
     <script>
-        // Efecto de animación para los botones
+        // Efecto especial para botones
         document.querySelectorAll('.btn-demon').forEach(button => {
-            button.addEventListener('mouseover', function() {
-                this.style.transform = 'translateY(-3px)';
-                this.style.boxShadow = '0 6px 0 #1d3557';
+            button.addEventListener('mouseenter', () => {
+                button.style.background = 'linear-gradient(to right, #c1121f, var(--primary))';
             });
             
-            button.addEventListener('mouseout', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 4px 0 #1d3557';
+            button.addEventListener('mouseleave', () => {
+                button.style.background = 'linear-gradient(to right, var(--primary), #c1121f)';
             });
             
-            button.addEventListener('click', function() {
-                this.style.transform = 'translateY(2px)';
-                this.style.boxShadow = '0 2px 0 #1d3557';
+            button.addEventListener('click', () => {
+                button.style.transform = 'translateY(4px)';
+                button.style.boxShadow = '0 2px 0 var(--dark)';
                 setTimeout(() => {
-                    this.style.transform = 'translateY(-3px)';
-                    this.style.boxShadow = '0 6px 0 #1d3557';
-                }, 100);
+                    button.style.transform = 'translateY(-3px)';
+                    button.style.boxShadow = '0 8px 0 var(--dark)';
+                }, 200);
             });
         });
+        
+        // Efecto de caída de pétalos (opcional)
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.innerHTML = '❁';
+            petal.style.position = 'fixed';
+            petal.style.color = `hsl(${Math.random() * 60 + 330}, 80%, 70%)`;
+            petal.style.fontSize = `${Math.random() * 20 + 10}px`;
+            petal.style.left = `${Math.random() * 100}vw`;
+            petal.style.top = '-20px';
+            petal.style.zIndex = '9999';
+            petal.style.pointerEvents = 'none';
+            petal.style.animation = `fall ${Math.random() * 5 + 5}s linear forwards`;
+            document.body.appendChild(petal);
+            
+            setTimeout(() => {
+                petal.remove();
+            }, 6000);
+        }
+        
+        // Activar efecto de pétalos (descomentar para activar)
+        // setInterval(createPetal, 300);
     </script>
 </body>
 </html>

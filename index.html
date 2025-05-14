@@ -3,57 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Nombre Completo</title>
+    <title>Mi Página Personal</title>
     <style>
         body {
-            background-color: black; /* Color de fondo negro */
-            background-image: url('https://raw.githubusercontent.com/JhonApancho/JhonApancho/main/GOJO%20VS%20SUKUNA.jpg'); /* Ruta corregida */
-            background-repeat: no-repeat; /* Evita que la imagen se repita */
-            background-size: 800px 1000px; /* Ajusta el tamaño de la imagen a 800x600 píxeles */
-            background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
-            background-position: center; /* Centra la imagen en el fondo */
-            color: white; /* Cambia el color del texto a blanco */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #35424a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #35424a;
+            border-bottom: 2px solid #35424a;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: square;
+        }
+        a {
+            color: #35424a;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #35424a;
+            color: white;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Jhon Praxedes Apancho Ascue</h1>
-    <p>Estudiante de cuarto semestre, tengo 23 años de la Carrera de Contabilidad en la Universidad Catolica San Pablo</p>
-    <h2>Datos generales</h2>
-    <p>Email: Jhon.apancho@ucsp.edu.pe</p>
-    <p>Linkedin: <a href="https://www.linkedin.com/in/jhon-praxedes-apancho-ascue-0a11aa33b/">enlace</a></p>
-    
-    <h2>Cursos Realizados</h2>
-    <ul>
-        <li>Contabilidad de Costos
-            <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/lourdes-paz-25935335/">enlace</a></p>
-        </li>
-        <li>Calculo 1</li>
-        <li>Liderazgo
-            <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/juan-alonso-sardá-candia-1b535768/">enlace</a></p>
-        </li>
-        <li>Pensamiento Critico
-            <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/renatocu/">enlace</a></p>
-        </li>
-        <li>Logica
-            <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/fernando-alberto-lacunza-murillo-604580220/">enlace</a></p>
-        </li>
-        <li>Introduccion a Ciencia de la Computacion
-            <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/renzo-medina-zeballos-77145a35/">enlace</a></p>
-        </li>
-        <li>Historia Occidenal 1
-            <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/amparo-isela-chalco-chávez-8185512aa/">enlace</a></p>
-        </li>
-    </ul>
+    <header>
+        <div class="container">
+            <h1>[Tu Nombre Completo]</h1>
+            <p>Estudiante de [Nombre de tu Carrera]</p>
+        </div>
+    </header>
 
-    <h2>Compañeros de Grupo del Curso de ICC</h2>
-    <ul>
-        <li>Alanis Aguilar: <a href="https://alanisaguilar.github.io/Alanis-Aguilar-Quezada.github.io/">enlace</a></li>
-        <li>Aylen Elena: <a href="https://ayleneyn.github.io/AYLEN-ELENA-YUCRA-NINA/">enlace</a></li>
-        <li>Allison Lucero Rendon Rios: <a href="https://ashlee-allison-rendon-rios.neocities.org">enlace</a></li>
-        <li>Shaell Nayely Machaca Narvaez: <a href="https://kirari14.github.io/Shaell-Nayely-Machaca-Narvaez/">enlace</a></li>
-        <li>Dayana Nicol Verapinto Romero: <a href="https://dayana-jpg.github.io/Dayana-Nicol-Verapinto-/">enlace</a></li>
-        <li>Valeska Noa Mamani: <a href="https://valeska-2006.github.io/Valeska-Anamile-Noa-Mamani/">enlace</a></li>
-    </ul>
+    <div class="container">
+        <section id="informacion-personal">
+            <h2>Información Personal</h2>
+            <p><strong>Nombres:</strong> [Tus Nombres]</p>
+            <p><strong>Apellidos:</strong> [Tus Apellidos]</p>
+            <p><strong>Carrera:</strong> [Nombre Completo de tu Carrera]</p>
+            <p><strong>Universidad/Institución:</strong> [Nombre de tu universidad o institución]</p>
+        </section>
+
+        <section id="cursos-actuales">
+            <h2>Cursos Actuales</h2>
+            <ul>
+                <li>[Nombre del Curso 1]</li>
+                <li>[Nombre del Curso 2]</li>
+                <li>[Nombre del Curso 3]</li>
+                <li>[Nombre del Curso 4]</li>
+                <!-- Agrega más cursos según necesites -->
+            </ul>
+        </section>
+
+        <section id="enlaces-companeros">
+            <h2>Páginas de Compañeros</h2>
+            <ul>
+                <li><a href="[URL de la página de compañero 1]">[Nombre del compañero 1]</a></li>
+                <li><a href="[URL de la página de compañero 2]">[Nombre del compañero 2]</a></li>
+                <li><a href="[URL de la página de compañero 3]">[Nombre del compañero 3]</a></li>
+                <li><a href="[URL de la página de compañero 4]">[Nombre del compañero 4]</a></li>
+                <!-- Agrega más enlaces según necesites -->
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 [Tu Nombre]. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

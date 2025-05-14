@@ -3,79 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Personal</title>
+    <title>Ruth Mery - Demon Slayer Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #e63946;
+            --secondary: #f1faee;
+            --accent: #a8dadc;
+            --dark: #1d3557;
+            --light: #f1faee;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Noto Sans JP', sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0;
+            background-color: var(--secondary);
             color: #333;
+            background-image: url('https://i.imgur.com/JQJQZQJ.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
+        
         header {
-            background: #35424a;
-            color: white;
-            padding: 20px 0;
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: var(--light);
+            padding: 30px 0;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
         }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f72585, #7209b7, #3a0ca3, #4361ee, #4cc9f0);
+        }
+        
         h1 {
             margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
         }
+        
         .container {
-            width: 80%;
+            width: 85%;
             margin: auto;
             overflow: hidden;
         }
+        
         section {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid var(--primary);
         }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
         h2 {
-            color: #35424a;
-            border-bottom: 2px solid #35424a;
-            padding-bottom: 5px;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
         }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--dark);
+        }
+        
         ul {
-            list-style-type: square;
+            list-style-type: none;
+            padding: 0;
         }
+        
+        li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #ddd;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        li::before {
+            content: "❖";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+        
         a {
-            color: #35424a;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        a:hover {
+            color: var(--primary);
+            background-color: rgba(168, 218, 220, 0.3);
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
-        }
+        
         footer {
             text-align: center;
-            padding: 20px;
-            background: #35424a;
-            color: white;
-            margin-top: 20px;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: var(--light);
+            margin-top: 40px;
+            font-size: 0.9rem;
         }
+        
         /* Estilos para la imagen centrada */
         .imagen-centrada {
             display: block;
-            margin: 20px auto;
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin: 25px auto;
+            max-width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border: 5px solid white;
+            transition: transform 0.3s ease;
         }
+        
+        .imagen-centrada:hover {
+            transform: scale(1.03);
+        }
+        
         .centrar-texto {
             text-align: center;
-            margin: 10px 0;
+            margin: 15px 0;
+        }
+        
+        /* Efectos especiales */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Botones estilo Demon Slayer */
+        .btn-demon {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 0 var(--dark);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-demon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 0 var(--dark);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header class="floating">
         <div class="container">
             <h1>RUTH MERY BARRIGA VERA</h1>
-            <p>Estudiante de Contabilidad</p>
+            <p>Estudiante de Contabilidad | Estilo Cazadora de Demonios</p>
         </div>
     </header>
 
@@ -85,9 +218,10 @@
             <div class="centrar-texto">
                 <h2>Mis Niños</h2>
             </div>
-            <img src="Amigos.jpg" alt="Foto de Ruth Mery Barriga Vera" class="imagen-centrada">
+            <img src="Amigos.jpg" alt="Foto de Ruth Mery Barriga Vera" class="imagen-centrada floating">
             <div class="centrar-texto">
                 <p>Estudiante de Contabilidad en la Universidad Católica San Pablo</p>
+                <button class="btn-demon">Respiración de la Contabilidad</button>
             </div>
         </section>
 
@@ -97,49 +231,74 @@
             <p><strong>Apellidos:</strong> BARRIGA VERA</p>
             <p><strong>Carrera:</strong> CONTABILIDAD</p>
             <p><strong>Universidad/Institución:</strong> UNIVERSIDAD CATOLICA SAN PABLO</p>
+            <button class="btn-demon">Mostrar Nichirin</button>
         </section>
 
         <section id="cursos-actuales">
-            <h2>Cursos Actuales</h2>
+            <h2>Técnicas de Combate (Cursos Actuales)</h2>
             <ul>
                 <li>Contabilidad de Costos II 
-                    <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/julio-c%C3%A9sar-liz%C3%A1rraga-zegarra-01524289/">enlace</a></p>
+                    <p>Maestro del estilo: <a href="https://www.linkedin.com/in/julio-c%C3%A9sar-liz%C3%A1rraga-zegarra-01524289/">Julio César Lizarraga Zegarra</a></p>
                 </li>
                 <li>Normatividad Contable II
-                    <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/edgard-fredy-leiva-flores-a17b2aa0/">enlace</a></p>
+                    <p>Maestra del estilo: <a href="https://www.linkedin.com/in/edgard-fredy-leiva-flores-a17b2aa0/">Edgard Fredy Leiva Flores</a></p>
                 </li>
                 <li>Estadistica y Probabilidades
-                    <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/ricardo-enr%C3%ADquez-c%C3%A1ceres-88200325/">enlace</a></p>
+                    <p>Maestro del estilo: <a href="https://www.linkedin.com/in/ricardo-enr%C3%ADquez-c%C3%A1ceres-88200325/">Ricardo Enríquez Cáceres</a></p>
                 </li>
                 <li>Macroeconomia
-                    <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/lieslie-gallegos-arias-investigador-renacyt-773713a5/">enlace</a></p>
+                    <p>Maestra del estilo: <a href="https://www.linkedin.com/in/lieslie-gallegos-arias-investigador-renacyt-773713a5/">Lieslie Gallegos Arias</a></p>
                 </li>
                 <li>Introduccion a Ciencia de la Computacion
-                    <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/renzo-medina-zeballos-77145a35/">enlace</a></p>
+                    <p>Maestro del estilo: <a href="https://www.linkedin.com/in/renzo-medina-zeballos-77145a35/">Renzo Medina Zeballos</a></p>
                 </li>
                 <li>Contabilidad Tributaria I
-                    <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/helmut-monzon-86180b109/">enlace</a></p>
+                    <p>Maestro del estilo: <a href="https://www.linkedin.com/in/helmut-monzon-86180b109/">Helmut Monzon</a></p>
                 </li>          
                 <li>Moral
-                    <p>Pagina de Linkedin del Docente del curso: <a href="https://www.linkedin.com/in/andr%C3%A9s-jorge-%C3%A1lvarez-grupp-a6b158152/">enlace</a></p>
+                    <p>Maestro del estilo: <a href="https://www.linkedin.com/in/andr%C3%A9s-jorge-%C3%A1lvarez-grupp-a6b158152/">Andrés Jorge Álvarez Grupp</a></p>
                 </li>
             </ul>
+            <button class="btn-demon">Aprender Técnicas Totales</button>
         </section>
 
         <section id="enlaces-companeros">
-            <h2>Páginas de Compañeros</h2>
+            <h2>Compañeros del Cuerpo de Cazadores</h2>
             <ul>
-                <li><a href="[URL de la página de compañero 1]">[Nombre del compañero 1]</a></li>
-                <li><a href="[URL de la página de compañero 2]">[Nombre del compañero 2]</a></li>
-                <li><a href="[URL de la página de compañero 3]">[Nombre del compañero 3]</a></li>
-                <li><a href="[URL de la página de compañero 4]">[Nombre del compañero 4]</a></li>
-                <!-- Agrega más enlaces según necesites -->
+                <li><a href="#" class="btn-demon" style="display: inline-block; padding: 5px 15px;">Compañero 1</a></li>
+                <li><a href="#" class="btn-demon" style="display: inline-block; padding: 5px 15px;">Compañero 2</a></li>
+                <li><a href="#" class="btn-demon" style="display: inline-block; padding: 5px 15px;">Compañero 3</a></li>
+                <li><a href="#" class="btn-demon" style="display: inline-block; padding: 5px 15px;">Compañero 4</a></li>
             </ul>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2023 Ruth Mery Barriga Vera. Todos los derechos reservados.</p>
+        <p>&copy; 2023 Ruth Mery Barriga Vera. Todos los derechos reservados. | Estilo Kimetsu no Yaiba</p>
     </footer>
+
+    <script>
+        // Efecto de animación para los botones
+        document.querySelectorAll('.btn-demon').forEach(button => {
+            button.addEventListener('mouseover', function() {
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 6px 0 #1d3557';
+            });
+            
+            button.addEventListener('mouseout', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 4px 0 #1d3557';
+            });
+            
+            button.addEventListener('click', function() {
+                this.style.transform = 'translateY(2px)';
+                this.style.boxShadow = '0 2px 0 #1d3557';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 6px 0 #1d3557';
+                }, 100);
+            });
+        });
+    </script>
 </body>
 </html>

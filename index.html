@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruth Mery - Estilo Cazadora</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+    <title>Ruth Mery - Mariposas Azules</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #e63946;
-            --secondary: #f1faee;
-            --accent: #a8dadc;
-            --dark: #1d3557;
-            --light: #f1faee;
-            --shinobu-purple: #b399d4;
-            --mitsuri-pink: #ff9bb3;
+            --primary: #1e88e5; /* Azul brillante */
+            --secondary: #e3f2fd; /* Azul claro */
+            --accent: #4fc3f7; /* Azul cielo */
+            --dark: #0d47a1; /* Azul oscuro */
+            --light: #f8fbff; /* Blanco azulado */
+            --butterfly-blue: #40c4ff; /* Azul mariposa */
+            --text-color: #263238; /* Gris oscuro para texto */
         }
         
         body {
@@ -21,7 +21,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: var(--text-color);
             background-image: url('https://i.imgur.com/9E6aWUb.jpg');
             background-size: cover;
             background-attachment: fixed;
@@ -37,24 +37,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(29, 53, 87, 0.85);
+            background: rgba(13, 71, 161, 0.7);
             z-index: -1;
         }
 
         header {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(230, 57, 70, 0.9));
+            background: linear-gradient(135deg, rgba(30, 136, 229, 0.9), rgba(64, 196, 255, 0.9));
             color: var(--light);
             padding: 30px 0;
             text-align: center;
             margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
             position: relative;
             overflow: hidden;
             border-bottom: 3px solid var(--primary);
         }
         
         header::after {
-            content: "❖";
+            content: "❀";
             position: absolute;
             bottom: -15px;
             left: 50%;
@@ -67,9 +67,10 @@
         h1 {
             margin: 0;
             font-size: 2.8rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             letter-spacing: 3px;
-            font-family: 'Kaushan Script', cursive;
+            font-family: 'Dancing Script', cursive;
+            color: var(--light);
         }
         
         .container {
@@ -80,30 +81,28 @@
         }
         
         section {
-            background: rgba(255, 255, 255, 0.93);
+            background: rgba(227, 242, 253, 0.95);
             padding: 30px;
             margin-bottom: 30px;
             border-radius: 10px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
             transition: all 0.4s ease;
             border-left: 6px solid var(--primary);
-            backdrop-filter: blur(2px);
         }
         
         section:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(30, 136, 229, 0.2);
         }
         
         h2 {
-            color: var(--primary);
+            color: var(--dark);
             border-bottom: 2px solid var(--accent);
             padding-bottom: 10px;
             font-size: 2rem;
             display: inline-block;
             margin-top: 0;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-            font-family: 'Kaushan Script', cursive;
+            font-family: 'Dancing Script', cursive;
         }
         
         ul {
@@ -113,14 +112,14 @@
         
         li {
             padding: 12px 0;
-            border-bottom: 1px dashed #ccc;
+            border-bottom: 1px dashed #90caf9;
             position: relative;
             padding-left: 35px;
             font-size: 1.1rem;
         }
         
         li::before {
-            content: "⚔";
+            content: "🦋";
             color: var(--primary);
             position: absolute;
             left: 0;
@@ -135,7 +134,7 @@
             font-weight: bold;
             padding: 3px 6px;
             border-radius: 4px;
-            background: linear-gradient(to right, transparent 50%, rgba(168, 218, 220, 0.3) 50%);
+            background: linear-gradient(to right, transparent 50%, rgba(79, 195, 247, 0.3) 50%);
             background-size: 200% 100%;
             background-position: right bottom;
         }
@@ -148,7 +147,7 @@
         footer {
             text-align: center;
             padding: 25px;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(230, 57, 70, 0.9));
+            background: linear-gradient(135deg, rgba(30, 136, 229, 0.9), rgba(64, 196, 255, 0.9));
             color: var(--light);
             margin-top: 50px;
             font-size: 1rem;
@@ -161,14 +160,14 @@
             width: 100%;
             max-width: 400px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             border: 6px solid white;
             transition: all 0.5s ease;
         }
         
         .imagen-centrada:hover {
             transform: scale(1.02) rotate(1deg);
-            box-shadow: 0 15px 30px rgba(230, 57, 70, 0.4);
+            box-shadow: 0 15px 30px rgba(30, 136, 229, 0.3);
         }
         
         .centrar-texto {
@@ -176,48 +175,26 @@
             margin: 20px 0;
         }
         
-        .btn-demon {
+        .btn-blue {
             display: inline-block;
-            background: linear-gradient(to right, var(--primary), #c1121f);
+            background: linear-gradient(to right, var(--primary), #1976d2);
             color: white;
             padding: 12px 25px;
             border-radius: 30px;
-            text-transform: uppercase;
             font-weight: bold;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             margin: 15px 5px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 0 var(--dark);
+            box-shadow: 0 4px 0 var(--dark);
             border: none;
             cursor: pointer;
             font-family: 'Noto Sans JP', sans-serif;
-            position: relative;
-            overflow: hidden;
         }
         
-        .btn-demon:hover {
+        .btn-blue:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 0 var(--dark);
-        }
-        
-        .btn-demon:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 0 var(--dark);
-        }
-        
-        .btn-demon::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                rgba(255,255,255,0.3) 0%,
-                rgba(255,255,255,0) 60%
-            );
-            transform: rotate(30deg);
+            box-shadow: 0 6px 0 var(--dark);
+            background: linear-gradient(to right, #1976d2, var(--primary));
         }
         
         .floating {
@@ -226,30 +203,21 @@
         
         @keyframes floating {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
-        
-        @keyframes glow {
-            0% { text-shadow: 0 0 5px rgba(230, 57, 70, 0.7); }
-            50% { text-shadow: 0 0 15px rgba(230, 57, 70, 0.9); }
-            100% { text-shadow: 0 0 5px rgba(230, 57, 70, 0.7); }
-        }
-        
-        h1, h2 {
-            animation: glow 3s ease-in-out infinite;
-        }
 
-        /* Elementos de Shinobu (mariposas) */
-        .butterfly {
+        /* Mariposas azules */
+        .blue-butterfly {
             position: fixed;
             font-size: 24px;
-            color: var(--shinobu-purple);
+            color: var(--butterfly-blue);
             z-index: 100;
             pointer-events: none;
-            text-shadow: 0 0 5px rgba(255,255,255,0.7);
+            text-shadow: 0 0 8px rgba(255,255,255,0.5);
             animation: floatButterfly 15s linear infinite;
             opacity: 0.8;
+            filter: drop-shadow(0 0 2px rgba(64, 196, 255, 0.7));
         }
 
         @keyframes floatButterfly {
@@ -265,34 +233,6 @@
             }
             100% {
                 transform: translate(100vw, 100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* Elementos de Mitsuri (flores) */
-        .flower {
-            position: fixed;
-            font-size: 20px;
-            color: var(--mitsuri-pink);
-            z-index: 100;
-            pointer-events: none;
-            animation: floatFlower 20s linear infinite;
-            opacity: 0.7;
-        }
-
-        @keyframes floatFlower {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.7;
-            }
-            90% {
-                opacity: 0.7;
-            }
-            100% {
-                transform: translate(100vw, -100vh) rotate(-360deg);
                 opacity: 0;
             }
         }
@@ -324,7 +264,7 @@
         <!-- Sección de imagen -->
         <section id="foto-perfil">
             <div class="centrar-texto">
-                <h2>Mis Pagina de Mision</h2>
+                <h2>Mi Página de Misión</h2>
             </div>
             <img src="Amigos.jpg" alt="Ruth Mery y sus compañeros" class="imagen-centrada">
             <div class="centrar-texto">
@@ -336,7 +276,7 @@
             <h2>Datos del Estudiante</h2>
             <ul>
                 <li><strong>Nombre:</strong> RUTH MERY BARRIGA VERA</li>
-                <li><strong>Rango:</strong> Estudiante de Contabilidad </li>
+                <li><strong>Rango:</strong> Estudiante de Contabilidad</li>
                 <li><strong>Universidad:</strong> UNIVERSIDAD CATOLICA SAN PABLO</li>
                 <li><strong>Habilidad:</strong> Estilo Contable</li>
             </ul>
@@ -372,90 +312,48 @@
         <section id="enlaces-companeros">
             <h2>Compañeros de Universidad</h2>
             <div class="centrar-texto">
-                <button class="btn-demon" style="margin: 10px">Cazador 1</button>
-                <button class="btn-demon" style="margin: 10px">Cazador 2</button>
-                <button class="btn-demon" style="margin: 10px">Cazador 3</button>
-                <button class="btn-demon" style="margin: 10px">Cazador 4</button>
+                <button class="btn-blue" style="margin: 10px">Compañero 1</button>
+                <button class="btn-blue" style="margin: 10px">Compañero 2</button>
+                <button class="btn-blue" style="margin: 10px">Compañero 3</button>
+                <button class="btn-blue" style="margin: 10px">Compañero 4</button>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2023 Ruth Mery Barriga Vera - Cazadora de Demonios Contables | 鬼滅の刃スタイル</p>
+        <p>&copy; 2023 Ruth Mery Barriga Vera | Diseño con Mariposas Azules</p>
     </footer>
 
     <script>
         // Efecto especial para botones
-        document.querySelectorAll('.btn-demon').forEach(button => {
+        document.querySelectorAll('.btn-blue').forEach(button => {
             button.addEventListener('mouseenter', () => {
-                button.style.background = 'linear-gradient(to right, #c1121f, var(--primary))';
+                button.style.background = 'linear-gradient(to right, #1565c0, var(--primary))';
             });
             
             button.addEventListener('mouseleave', () => {
-                button.style.background = 'linear-gradient(to right, var(--primary), #c1121f)';
+                button.style.background = 'linear-gradient(to right, var(--primary), #1976d2)';
             });
             
             button.addEventListener('click', () => {
-                button.style.transform = 'translateY(4px)';
+                button.style.transform = 'translateY(2px)';
                 button.style.boxShadow = '0 2px 0 var(--dark)';
                 setTimeout(() => {
                     button.style.transform = 'translateY(-3px)';
-                    button.style.boxShadow = '0 8px 0 var(--dark)';
+                    button.style.boxShadow = '0 6px 0 var(--dark)';
                 }, 200);
             });
         });
         
-        // Crear mariposas (Shinobu)
+        // Crear mariposas azules
         function createButterflies() {
             const butterflyChars = ['🦋', '𓆉', '❀'];
-            for (let i = 0; i < 8; i++) {
+            for (let i = 0; i < 10; i++) {
                 setTimeout(() => {
                     const butterfly = document.createElement('div');
-                    butterfly.className = 'butterfly';
+                    butterfly.className = 'blue-butterfly';
                     butterfly.innerHTML = butterflyChars[Math.floor(Math.random() * butterflyChars.length)];
                     butterfly.style.left = Math.random() * 100 + 'vw';
                     butterfly.style.top = Math.random() * 100 + 'vh';
                     butterfly.style.fontSize = (Math.random() * 20 + 15) + 'px';
-                    butterfly.style.animationDuration = (Math.random() * 10 + 15) + 's';
-                    butterfly.style.opacity = Math.random() * 0.5 + 0.3;
-                    document.body.appendChild(butterfly);
-
-                    setTimeout(() => {
-                        butterfly.remove();
-                    }, 20000);
-                }, i * 1500);
-            }
-        }
-
-        // Crear flores (Mitsuri)
-        function createFlowers() {
-            const flowerChars = ['🌸', '🌺', '🏵️', '💮', '🌼'];
-            for (let i = 0; i < 6; i++) {
-                setTimeout(() => {
-                    const flower = document.createElement('div');
-                    flower.className = 'flower';
-                    flower.innerHTML = flowerChars[Math.floor(Math.random() * flowerChars.length)];
-                    flower.style.left = Math.random() * 100 + 'vw';
-                    flower.style.top = Math.random() * 100 + 'vh';
-                    flower.style.fontSize = (Math.random() * 25 + 15) + 'px';
-                    flower.style.animationDuration = (Math.random() * 15 + 20) + 's';
-                    flower.style.opacity = Math.random() * 0.5 + 0.3;
-                    document.body.appendChild(flower);
-
-                    setTimeout(() => {
-                        flower.remove();
-                    }, 25000);
-                }, i * 2000);
-            }
-        }
-
-        // Iniciar efectos
-        document.addEventListener('DOMContentLoaded', () => {
-            createButterflies();
-            createFlowers();
-            setInterval(createButterflies, 10000);
-            setInterval(createFlowers, 15000);
-        });
-    </script>
-</body>
-</html>
+                    butterfly.style.animationDuration = (Math.random() * 10 + 15) + 's

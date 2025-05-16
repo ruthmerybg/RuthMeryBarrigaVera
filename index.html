@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruth Mery - Mariposas Azules</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <title>Ruth Mery - Mundo de Mariposas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1e88e5; /* Azul brillante */
@@ -14,22 +14,22 @@
             --light: #f8fbff; /* Blanco azulado */
             --butterfly-blue: #40c4ff; /* Azul mariposa */
             --text-color: #263238; /* Gris oscuro para texto */
+            --butterfly-shadow: rgba(64, 196, 255, 0.4);
         }
         
         body {
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
             color: var(--text-color);
-            background-image: url('https://i.imgur.com/9E6aWUb.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
             min-height: 100vh;
             overflow-x: hidden;
+            position: relative;
         }
-        
+
+        /* Patrón de alas de mariposa de fondo */
         body::before {
             content: "";
             position: fixed;
@@ -37,8 +37,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(13, 71, 161, 0.7);
+            background-image: 
+                radial-gradient(circle at 20% 30%, var(--butterfly-shadow) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, var(--butterfly-shadow) 0%, transparent 20%),
+                radial-gradient(circle at 30% 80%, var(--butterfly-shadow) 0%, transparent 20%),
+                radial-gradient(circle at 70% 20%, var(--butterfly-shadow) 0%, transparent 20%);
+            background-size: 200px 200px;
             z-index: -1;
+            opacity: 0.3;
         }
 
         header {
@@ -47,30 +53,51 @@
             padding: 30px 0;
             text-align: center;
             margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(13, 71, 161, 0.2);
             position: relative;
             overflow: hidden;
             border-bottom: 3px solid var(--primary);
         }
         
         header::after {
-            content: "❀";
+            content: "";
             position: absolute;
-            bottom: -15px;
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 24px;
-            color: var(--primary);
-            text-shadow: 0 0 10px rgba(255,255,255,0.7);
+            width: 40px;
+            height: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%231e88e5' d='M50,0 C60,20 80,30 100,50 C80,70 60,80 50,100 C40,80 20,70 0,50 C20,30 40,20 50,0 Z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
         }
         
         h1 {
             margin: 0;
             font-size: 2.8rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             font-family: 'Dancing Script', cursive;
             color: var(--light);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--light);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        h1:hover::after {
+            transform: scaleX(1);
         }
         
         .container {
@@ -78,16 +105,33 @@
             max-width: 1200px;
             margin: 30px auto;
             overflow: hidden;
+            position: relative;
         }
         
         section {
-            background: rgba(227, 242, 253, 0.95);
+            background: rgba(255, 255, 255, 0.9);
             padding: 30px;
             margin-bottom: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0 6px 18px rgba(0,0,0,0.1);
             transition: all 0.4s ease;
-            border-left: 6px solid var(--primary);
+            border-top: 3px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%234fc3f7' d='M50,0 C60,20 80,30 100,50 C80,70 60,80 50,100 C40,80 20,70 0,50 C20,30 40,20 50,0 Z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            transform: rotate(15deg);
         }
         
         section:hover {
@@ -97,12 +141,29 @@
         
         h2 {
             color: var(--dark);
-            border-bottom: 2px solid var(--accent);
             padding-bottom: 10px;
             font-size: 2rem;
             display: inline-block;
             margin-top: 0;
             font-family: 'Dancing Script', cursive;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover h2::after {
+            transform: scaleX(1);
         }
         
         ul {
@@ -114,8 +175,14 @@
             padding: 12px 0;
             border-bottom: 1px dashed #90caf9;
             position: relative;
-            padding-left: 35px;
+            padding-left: 40px;
             font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            background-color: rgba(79, 195, 247, 0.1);
+            transform: translateX(5px);
         }
         
         li::before {
@@ -124,17 +191,22 @@
             position: absolute;
             left: 0;
             top: 10px;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+        }
+
+        li:hover::before {
+            transform: rotate(15deg) scale(1.2);
         }
         
         a {
             color: var(--dark);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-weight: bold;
-            padding: 3px 6px;
+            font-weight: 600;
+            padding: 2px 4px;
             border-radius: 4px;
-            background: linear-gradient(to right, transparent 50%, rgba(79, 195, 247, 0.3) 50%);
+            background: linear-gradient(to right, transparent 50%, rgba(79, 195, 247, 0.2) 50%);
             background-size: 200% 100%;
             background-position: right bottom;
         }
@@ -151,7 +223,18 @@
             color: var(--light);
             margin-top: 50px;
             font-size: 1rem;
-            border-top: 3px solid var(--accent);
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'%3E%3Cpath fill='%231e88e5' d='M0,20 C20,10 40,15 50,20 C60,15 80,10 100,20 Z'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
         }
         
         .imagen-centrada {
@@ -160,9 +243,22 @@
             width: 100%;
             max-width: 400px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            border: 6px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border: 4px solid white;
             transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .imagen-centrada::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 136, 229, 0.1), rgba(64, 196, 255, 0.1));
+            z-index: 1;
         }
         
         .imagen-centrada:hover {
@@ -173,6 +269,18 @@
         .centrar-texto {
             text-align: center;
             margin: 20px 0;
+            position: relative;
+        }
+
+        .centrar-texto::after {
+            content: "🦋";
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--accent);
+            opacity: 0.5;
         }
         
         .btn-blue {
@@ -181,14 +289,28 @@
             color: white;
             padding: 12px 25px;
             border-radius: 30px;
-            font-weight: bold;
+            font-weight: 600;
             letter-spacing: 1px;
             margin: 15px 5px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 0 var(--dark);
             border: none;
             cursor: pointer;
-            font-family: 'Noto Sans JP', sans-serif;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-blue::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+            z-index: -1;
         }
         
         .btn-blue:hover {
@@ -196,7 +318,16 @@
             box-shadow: 0 6px 0 var(--dark);
             background: linear-gradient(to right, #1976d2, var(--primary));
         }
+
+        .btn-blue:hover::before {
+            left: 100%;
+        }
         
+        .btn-blue:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 0 var(--dark);
+        }
+
         .floating {
             animation: floating 4s ease-in-out infinite;
         }
@@ -207,7 +338,7 @@
             100% { transform: translateY(0px); }
         }
 
-        /* Mariposas azules */
+        /* Mariposas azules animadas */
         .blue-butterfly {
             position: fixed;
             font-size: 24px;
@@ -217,26 +348,54 @@
             text-shadow: 0 0 8px rgba(255,255,255,0.5);
             animation: floatButterfly 15s linear infinite;
             opacity: 0.8;
-            filter: drop-shadow(0 0 2px rgba(64, 196, 255, 0.7));
+            filter: drop-shadow(0 0 3px var(--butterfly-shadow));
+            transform-origin: center;
         }
 
         @keyframes floatButterfly {
             0% {
-                transform: translate(0, 0) rotate(0deg);
+                transform: translate(0, 0) rotate(0deg) scale(1);
                 opacity: 0;
             }
             10% {
                 opacity: 0.8;
             }
+            50% {
+                transform: translate(50vw, 50vh) rotate(180deg) scale(1.2);
+            }
             90% {
                 opacity: 0.8;
             }
             100% {
-                transform: translate(100vw, 100vh) rotate(360deg);
+                transform: translate(100vw, 100vh) rotate(360deg) scale(1);
                 opacity: 0;
             }
         }
-        
+
+        /* Efecto de alas batiendo */
+        @keyframes butterflyWing {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        /* Contenedor de mariposas decorativas */
+        .butterfly-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Mariposa decorativa fija */
+        .decorative-butterfly {
+            position: absolute;
+            font-size: 40px;
+            color: var(--butterfly-blue);
+            opacity: 0.2;
+            animation: butterflyWing 2s ease-in-out infinite;
+        }
+
         @media (max-width: 768px) {
             .container {
                 width: 95%;
@@ -249,14 +408,25 @@
             section {
                 padding: 20px;
             }
+
+            .centrar-texto::after {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="butterfly-container">
+        <div class="decorative-butterfly" style="top: 10%; left: 5%;">🦋</div>
+        <div class="decorative-butterfly" style="top: 30%; right: 10%;">𓆉</div>
+        <div class="decorative-butterfly" style="bottom: 20%; left: 15%;">❀</div>
+        <div class="decorative-butterfly" style="bottom: 40%; right: 5%;">🦋</div>
+    </div>
+
     <header class="floating">
         <div class="container">
             <h1>RUTH MERY BARRIGA VERA</h1>
-            <p>« Estudiante de Contabilidad - Primer Forma: Balance Perfecto »</p>
+            <p>« Transformación como una Mariposa - Vuelo Contable »</p>
         </div>
     </header>
 
@@ -264,53 +434,56 @@
         <!-- Sección de imagen -->
         <section id="foto-perfil">
             <div class="centrar-texto">
-                <h2>Mi Página de Misión</h2>
+                <h2>Mi Vuelo Universitario</h2>
             </div>
             <img src="Amigos.jpg" alt="Ruth Mery y sus compañeros" class="imagen-centrada">
             <div class="centrar-texto">
-                <p>« Estudiante de la Universidad Católica San Pablo »</p>
+                <p>« Como mariposa en metamorfosis, creciendo en la Universidad Católica San Pablo »</p>
+                <button class="btn-blue">Ver Mi Evolución</button>
             </div>
         </section>
 
         <section id="informacion-personal">
-            <h2>Datos del Estudiante</h2>
+            <h2>Datos del Vuelo</h2>
             <ul>
                 <li><strong>Nombre:</strong> RUTH MERY BARRIGA VERA</li>
-                <li><strong>Rango:</strong> Estudiante de Contabilidad</li>
-                <li><strong>Universidad:</strong> UNIVERSIDAD CATOLICA SAN PABLO</li>
-                <li><strong>Habilidad:</strong> Estilo Contable</li>
+                <li><strong>Nido:</strong> Estudiante de Contabilidad</li>
+                <li><strong>Jardín:</strong> UNIVERSIDAD CATOLICA SAN PABLO</li>
+                <li><strong>Alas:</strong> Especialización Contable</li>
             </ul>
+            <button class="btn-blue">Mapa de Ruta</button>
         </section>
 
         <section id="cursos-actuales">
-            <h2>Cursos en Entrenamiento</h2>
+            <h2>Polen de Conocimiento</h2>
             <ul>
                 <li><strong>Contabilidad de Costos II</strong>
-                    <p>Maestro: <a href="https://www.linkedin.com/in/julio-c%C3%A9sar-liz%C3%A1rraga-zegarra-01524289/">Julio César Lizarraga Zegarra</a></p>
+                    <p>Guía: <a href="https://www.linkedin.com/in/julio-c%C3%A9sar-liz%C3%A1rraga-zegarra-01524289/">Julio César Lizarraga Zegarra</a></p>
                 </li>
                 <li><strong>Normatividad Contable II</strong>
-                    <p>Maestro: <a href="https://www.linkedin.com/in/edgard-fredy-leiva-flores-a17b2aa0/">Edgard Fredy Leiva Flores</a></p>
+                    <p>Guía: <a href="https://www.linkedin.com/in/edgard-fredy-leiva-flores-a17b2aa0/">Edgard Fredy Leiva Flores</a></p>
                 </li>
                 <li><strong>Estadistica y Probabilidades</strong>
-                    <p>Maestro: <a href="https://www.linkedin.com/in/ricardo-enr%C3%ADquez-c%C3%A1ceres-88200325/">Ricardo Enríquez Cáceres</a></p>
+                    <p>Guía: <a href="https://www.linkedin.com/in/ricardo-enr%C3%ADquez-c%C3%A1ceres-88200325/">Ricardo Enríquez Cáceres</a></p>
                 </li>
                 <li><strong>Macroeconomia</strong>
-                    <p>Maestra: <a href="https://www.linkedin.com/in/lieslie-gallegos-arias-investigador-renacyt-773713a5/">Lieslie Gallegos Arias</a></p>
+                    <p>Guía: <a href="https://www.linkedin.com/in/lieslie-gallegos-arias-investigador-renacyt-773713a5/">Lieslie Gallegos Arias</a></p>
                 </li>
                 <li><strong>Introduccion a Ciencia de la Computacion</strong>
-                    <p>Maestro: <a href="https://www.linkedin.com/in/renzo-medina-zeballos-77145a35/">Renzo Medina Zeballos</a></p>
+                    <p>Guía: <a href="https://www.linkedin.com/in/renzo-medina-zeballos-77145a35/">Renzo Medina Zeballos</a></p>
                 </li>
                 <li><strong>Contabilidad Tributaria I</strong>
-                    <p>Maestro: <a href="https://www.linkedin.com/in/helmut-monzon-86180b109/">Helmut Monzon</a></p>
+                    <p>Guía: <a href="https://www.linkedin.com/in/helmut-monzon-86180b109/">Helmut Monzon</a></p>
                 </li>
                 <li><strong>Moral</strong>
-                    <p>Maestro: <a href="https://www.linkedin.com/in/andr%C3%A9s-jorge-%C3%A1lvarez-grupp-a6b158152/">Andrés Jorge Álvarez Grupp</a></p>
+                    <p>Guía: <a href="https://www.linkedin.com/in/andr%C3%A9s-jorge-%C3%A1lvarez-grupp-a6b158152/">Andrés Jorge Álvarez Grupp</a></p>
                 </li>
             </ul>
+            <button class="btn-blue">Expandir Mis Alas</button>
         </section>
 
         <section id="enlaces-companeros">
-            <h2>Compañeros de Universidad</h2>
+            <h2>Bandada Universitaria</h2>
             <div class="centrar-texto">
                 <button class="btn-blue" style="margin: 10px">Compañero 1</button>
                 <button class="btn-blue" style="margin: 10px">Compañero 2</button>
@@ -321,7 +494,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2023 Ruth Mery Barriga Vera | Diseño con Mariposas Azules</p>
+        <p>&copy; 2023 Ruth Mery Barriga Vera | Vuelo de Mariposa Azul</p>
     </footer>
 
     <script>
@@ -345,15 +518,61 @@
             });
         });
         
-        // Crear mariposas azules
+        // Crear mariposas azules animadas
         function createButterflies() {
             const butterflyChars = ['🦋', '𓆉', '❀'];
-            for (let i = 0; i < 10; i++) {
+            const butterflyColors = ['#40c4ff', '#1e88e5', '#4fc3f7', '#64b5f6'];
+            
+            for (let i = 0; i < 12; i++) {
                 setTimeout(() => {
                     const butterfly = document.createElement('div');
                     butterfly.className = 'blue-butterfly';
                     butterfly.innerHTML = butterflyChars[Math.floor(Math.random() * butterflyChars.length)];
-                    butterfly.style.left = Math.random() * 100 + 'vw';
+                    butterfly.style.left = Math.random() * -100 + 'px';
                     butterfly.style.top = Math.random() * 100 + 'vh';
-                    butterfly.style.fontSize = (Math.random() * 20 + 15) + 'px';
-                    butterfly.style.animationDuration = (Math.random() * 10 + 15) + 's
+                    butterfly.style.fontSize = (Math.random() * 25 + 20) + 'px';
+                    butterfly.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                    butterfly.style.animationDelay = (Math.random() * 5) + 's';
+                    butterfly.style.opacity = Math.random() * 0.5 + 0.4;
+                    butterfly.style.color = butterflyColors[Math.floor(Math.random() * butterflyColors.length)];
+                    document.body.appendChild(butterfly);
+
+                    setTimeout(() => {
+                        butterfly.remove();
+                    }, 25000);
+                }, i * 800);
+            }
+        }
+
+        // Efecto de alas batiendo para mariposas decorativas
+        function animateDecorativeButterflies() {
+            const butterflies = document.querySelectorAll('.decorative-butterfly');
+            butterflies.forEach((butterfly, index) => {
+                butterfly.style.animationDelay = `${index * 0.5}s`;
+            });
+        }
+
+        // Iniciar efectos
+        document.addEventListener('DOMContentLoaded', () => {
+            createButterflies();
+            animateDecorativeButterflies();
+            setInterval(createButterflies, 5000);
+        });
+
+        // Efecto de movimiento al pasar el mouse
+        document.addEventListener('mousemove', (e) => {
+            const butterflies = document.querySelectorAll('.blue-butterfly');
+            butterflies.forEach(butterfly => {
+                const rect = butterfly.getBoundingClientRect();
+                const x = rect.left + rect.width/2;
+                const y = rect.top + rect.height/2;
+                const distance = Math.sqrt(Math.pow(e.clientX - x, 2) + Math.pow(e.clientY - y, 2));
+                
+                if (distance < 100) {
+                    butterfly.style.transform = `translate(${(e.clientX - x)/10}px, ${(e.clientY - y)/10}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

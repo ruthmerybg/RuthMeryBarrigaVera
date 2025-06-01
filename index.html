@@ -328,6 +328,63 @@
             box-shadow: 0 2px 0 var(--dark);
         }
 
+        /* Estilo para los botones de compañeros */
+        .classmate-btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 0 var(--dark);
+            text-decoration: none;
+            text-align: center;
+            min-width: 200px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .classmate-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+        
+        .classmate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 0 var(--dark);
+            background: linear-gradient(to right, var(--accent), var(--primary));
+        }
+
+        .classmate-btn:hover::before {
+            left: 100%;
+        }
+        
+        .classmate-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 0 var(--dark);
+        }
+
+        /* Contenedor de botones de compañeros */
+        .classmates-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
         .floating {
             animation: floating 4s ease-in-out infinite;
         }
@@ -345,7 +402,7 @@
             color: var(--butterfly-blue);
             z-index: 100;
             pointer-events: none;
-            text-shadow: 0 0 8px rgba(255,255,255,0.5);
+            text-shadow: 0 0 8px rgba(255,255,255,0.5));
             animation: floatButterfly 15s linear infinite;
             opacity: 0.8;
             filter: drop-shadow(0 0 3px var(--butterfly-shadow));
@@ -411,6 +468,12 @@
 
             .centrar-texto::after {
                 display: none;
+            }
+
+            .classmate-btn {
+                min-width: 150px;
+                padding: 10px 15px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -480,17 +543,18 @@
         </section>
 
         <section id="classmates">
-            <h2>Compañeros Universitarios</h2>
-            <div style="text-align: center;">
-                <a href="https://shyrlyzarai1.github.io/Shyrly-Zarai-Pacco-Cruz/" target="_blank" class="winter-btn">Shyrly Zarai Pacco Cruz</a>
-                <a href="https://yaninarosalinda.github.io/Yanina-Rosalinda-Quispe-Choque/" target="_blank" class="winter-btn">Yanina Rosalinda Quispe Choque</a>
-                <a href="https://nicolegaldos.neocities.org" target="_blank" class="winter-btn">Nicole Alexandra Galdós Champi</a>
+            <h2>Amigos del Curso</h2>
+            <div class="classmates-container">
+                <a href="https://shyrlyzarai1.github.io/Shyrly-Zarai-Pacco-Cruz/" target="_blank" class="classmate-btn">Shyrly Zarai Pacco Cruz</a>
+                <a href="https://ruthmerybg.github.io/RuthMeryBarrigaVera/" target="_blank" class="classmate-btn">Ruth Mery Barriga Vera</a>
+                <a href="https://nicolegaldos.neocities.org" target="_blank" class="classmate-btn">Nicole Alexandra Galdós Champi</a>
+                <a href="https://yaninarosalinda.github.io/Yanina-Rosalinda-Quispe-Choque/" target="_blank" class="classmate-btn">Yanina Rosalinda Quispe Choque</a>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2023 Ruth Mery Barriga Vera | Vuelo de Mariposa Azul</p>
+        <p>&copy; 2025 Ruth Mery Barriga Vera | Vuelo de Mariposa Azul</p>
     </footer>
 
     <script>
